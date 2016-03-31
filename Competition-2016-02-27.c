@@ -5,7 +5,6 @@
 #pragma platform(VEX)
 
 //Competition Control and Duration Settings
-//MOST IMPORTANT! DO NOT FORGET WHEN WRITING NEW CODE
 #pragma competitionControl(Competition)
 #pragma autonomousDuration(20)
 #pragma userControlDuration(120)
@@ -16,7 +15,7 @@
 //
 //                          Pre-Autonomous Functions
 //
-//					INITALIZE FUNCTIONS FOR AUTONOMOUS CODE HERE
+//			INITALIZE FUNCTIONS FOR AUTONOMOUS pre_auton FUNCTION HERE
 //
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -27,7 +26,7 @@ void pre_auton()
   bStopTasksBetweenModes = true;
 
 	// All activities that occur before the competition starts
-	// Example: clearing encoders, setting servo positions, ...
+  	// Such as resetting motor encoder values, setting motors to specific positions
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -44,8 +43,7 @@ task autonomous()
   // .....................................................................................
   // Insert user code here.
   // .....................................................................................
-
-	//AutonomousCodePlaceholderForTesting();  // Remove this function call once you have "real" code.
+  //AutonomousCodePlaceholderForTesting();  // Remove this function call once you have "real" code.
 }
 
 
@@ -56,12 +54,10 @@ task usercontrol()
 	while (true) //While 1 == 1 would also work here. Just saying. 
 	{
 
-	//VERY TANK CONTROLS BASIC USER CONTROL CODE
+	//Possible the simplest "Tank Controls" code
 
-    //Right side of the robot is controlled by the right joystick, Y-axis
     motor[frontRightMotor] = vexRT[Ch2];
     motor[backRightMotor]  = vexRT[Ch2];
-    //Left side of the robot is controlled by the left joystick, Y-axis
     motor[frontLeftMotor] = vexRT[Ch3];
     motor[backLeftMotor]  = vexRT[Ch3];
 
