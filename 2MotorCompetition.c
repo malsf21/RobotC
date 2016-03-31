@@ -45,17 +45,27 @@ task autonomous()
 }
 
 
+// Vex Controler Joystick and button list
+  // Right Joystick X axis movement is on Ch1
+  // Right Joystick Y axis movement is on Ch2
+  // Left Joystick X axis movement is on Ch3
+  // Left Joystick Y axis movement is on Ch4
+  // Right Keypad buttons are [Btn8U], [Btn8R], [Btn8D] or [Btn8L] with (U,R,D,L) corresponding to Up, Right, Down and Left
+  // Left Keypad buttons are [Btn7U], [Btn7R], [Btn7D] or [Btn7L]
+  // Right Trigger buttons are [Btn6U] and [Btn6D] with U and D corresponding to Up and Down
+  // Left  Trigger buttons are [Btn5U] and [Btn5D]
+
 task usercontrol()
 {
-	// User control code here, inside the loop
+	// Put User control code in the loop below, so that it runs perpetually
 
 	while (true) //While 1 == 1 would also work here. Just saying. 
 	{
 
-	//Possibly more complex Tank Controls code
+	//Slightly more complex Tank Controls code
 
-    motor[leftMotor] = (vexRT[Ch4] + vexRT[Ch3])/2;
-    motor[rightMotor] = (vexRT[Ch2] - vexRT[Ch1])/2;
+    motor[leftMotor] = (vexRT[Ch4] + vexRT[Ch3])/2; //(y channel + x channel)/2
+    motor[rightMotor] = (vexRT[Ch2] - vexRT[Ch1])/2; //(y channel - x channel)/2
 
 	}
 }
